@@ -1,5 +1,5 @@
 import java.util.*;
-public class LinkedListOperations{
+public class SingleLinkedListOperations{
     class CreateNode{
         int data;
         CreateNode next;
@@ -75,7 +75,7 @@ public class LinkedListOperations{
     }
     public static void main(String[] args) {
         
-        LinkedListOperations obj = new LinkedListOperations();
+        SingleLinkedListOperations obj = new SingleLinkedListOperations();
         while (true) {
             System.out.println("\n*******************************************");
             System.out.println("Enter the operation you want to perform: ");

@@ -1,5 +1,5 @@
 import java.util.*;
-class LinkedListOperations{
+class SingleLinkedListOperations{
     class CreateNode{
         int data;
         CreateNode next;
@@ -53,7 +53,7 @@ class LinkedListOperations{
 }
 public class StackUsingLinkList {
     public static void main(String[] args) {
-        LinkedListOperations obj = new LinkedListOperations();
+        SingleLinkedListOperations obj = new SingleLinkedListOperations();
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("\n*******************************************");
