@@ -55,9 +55,9 @@ public class DoubleLinkedListOperations {
         head.left = null;
     }
 
-    public void deleteAtAfter(int position){
+    public void deleteAtMiddle(int node){
         CreateNode ptr = head;
-        while (ptr.right.data != position) {
+        while (ptr.right.data != node) {
             ptr = ptr.right;
         }
         ptr.right = ptr.right.right;
@@ -86,7 +86,7 @@ public class DoubleLinkedListOperations {
             System.out.println("2. Add at Begin");
             System.out.println("3. Add at After");
             System.out.println("4. Delete at Begin");
-            System.out.println("5. Delete at After");
+            System.out.println("5. Delete at Middle");
             System.out.println("6. Delete at End");
             System.out.println("7. Display");
             System.out.println("8. Exit");
@@ -114,9 +114,9 @@ public class DoubleLinkedListOperations {
                     obj.deleteAtBegin();
                     break;
                 case 5:
-                    System.out.println("Enter the position: ");
-                    int position1 = sc.nextInt();
-                    obj.deleteAtAfter(position1);
+                    System.out.println("Enter the Node You want to delete: ");
+                    int node = sc.nextInt();
+                    obj.deleteAtMiddle(node);
                     break;
                 case 6:
                     obj.deleteAtEnd();

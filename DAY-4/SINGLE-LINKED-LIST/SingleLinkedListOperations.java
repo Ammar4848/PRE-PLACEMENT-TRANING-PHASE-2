@@ -50,9 +50,9 @@ public class SingleLinkedListOperations{
         head = head.next;
     }
 
-    public void deleteAtAfter(int position){
+    public void deleteAtMiddle(int node){
         CreateNode ptr = head;
-        while (ptr.next.data != position) {
+        while (ptr.next.data != node) {
             ptr = ptr.next;
         }
         ptr.next = ptr.next.next;
@@ -116,9 +116,9 @@ public class SingleLinkedListOperations{
                     break;
 
                 case 5:
-                    System.out.println("Enter the position you want to delete: ");
-                    int del = sc.nextInt();
-                    obj.deleteAtAfter(del);
+                    System.out.println("Enter the Node You want to delete: ");
+                    int node = sc.nextInt();
+                    obj.deleteAtMiddle(node);
                     break;
                 
                 case 6:
