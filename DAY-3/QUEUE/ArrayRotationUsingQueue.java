@@ -1,41 +1,27 @@
+import java.util.*;
 public class ArrayRotationUsingQueue {
-    final int CAPACITY = 10;
-    int front = 0;
-    int rear = -1;
-    int queue[] = new int[CAPACITY];
-    public boolean isfull() {
-        if (rear == CAPACITY - 1) {
-            return true;
-        } else {
-            return false;
+    public static void rotateArray(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return;
         }
-    }
-    public boolean isempty() {
-        if (front == 0 || front > rear) {
-            return true;
-        } else {
-            return false;
+        Queue<Integer> queue = new LinkedList<>();
+        for (int num : nums) {
+            queue.add(num);
         }
-    }
-    public void enqueue(int data) {
-        if (isfull()) {
-            System.out.println("Queue is full");
-        } else {
-            if (front == 0) {
-                front = 1;
-            }
-            queue[++rear] = data;
+        k = k % nums.length;
+        for (int i = 0; i < k; i++) {
+            int lastElement = queue.poll();
+            queue.add(lastElement);
+        }
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = queue.poll();
         }
     }
     public static void main(String[] args) {
-        ArrayRotationUsingQueue q = new ArrayRotationUsingQueue();
-        int arr[] = {1, 2, 3, 4, 5};
-        int d = 5;
-        for (int i = 0; i < d; i++) {
-            q.enqueue(arr[i]);
-        }
-        for (int i = 0; i < d; i++) {
-            System.out.print(q.queue[i]+" ");
-        }
+        int[] nums = { 1, 2, 3, 4, 5 };
+        int k = 2;
+        System.out.println("Original Array: " + Arrays.toString(nums));
+        rotateArray(nums, k);
+        System.out.println("Rotated Array: " + Arrays.toString(nums));
     }
 }
