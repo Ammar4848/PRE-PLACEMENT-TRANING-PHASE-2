@@ -77,6 +77,7 @@ public class ShopingCart {
                     }
                     break;
                 case 6:
+                    sc.close();
                     System.exit(0);
                     break;
                 default:
